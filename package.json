@@ -1,0 +1,22 @@
+{
+  "name": "d3-chart-panning",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ToanVQ",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/polyfill": "^7.0.0-beta.56",
+    "@babel/standalone": "^7.0.0-beta.56",
+    "chart.js": "^2.7.2",
+    "chartist": "^0.11.0",
+    "chartjs-plugin-zoom": "^0.6.3",
+    "d3": "^5.5.0",
+    "hammerjs": "^2.0.8"
+  },
+  "scripts": {
+    "start": "http-server"
+  },
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}
