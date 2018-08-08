@@ -1,3 +1,5 @@
+const NUMBER_LINE = 40;
+const NUMBER_SAMPLE_DATA = 1000;
 var randomScalingFactor = function () {
   return Math.random() * 40.0;
 };
@@ -6,7 +8,7 @@ var randomColor = function (opacity) {
 };
 
 var data = [];
-for (var i = 0; i < 1000; i++) {
+for (var i = 0; i < NUMBER_SAMPLE_DATA; i++) {
   data.push({
     x: i,
     y: randomScalingFactor()
@@ -30,459 +32,34 @@ var getOrder = function () {
 }
 
 var scatterChartData = {
-  datasets: [
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 2,
-      pointRadius: 0,
-      pointHitRadius: 0,
-      pointHitDetectionRadius : 0,
-      pointHoverRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    {
-      label: 'Series ' + getOrder(),
-      type: 'line',
-      borderColor: randomColor(0.7),
-      borderWidth: 2,
-      fill: false,
-      xAxisID: 'xAxes-1',
-      borderWidth: 1,
-      pointRadius: 0,
-      data: getData(getOrder()),
-    },
-    // {
-    //   label: 'Series ' + getOrder(),
-    //   xAxisID: 'xAxes-1',
-    //   type: 'scatter',
-    //   showLine: false,
-    //   pointRadius: 1,
-    //   data: getData(getOrder()),
-    // }
-  ]
+  datasets: (function () {
+    var series = [];
+    for (let i = 0; i < NUMBER_LINE; i++) {
+      series.push({
+        label: 'Series ' + (i + 1),
+        type: 'line',
+        borderColor: randomColor(1),
+        borderWidth: 2,
+        fill: false,
+        xAxisID: 'xAxes-1',
+        borderWidth: 1,
+        pointRadius: 0,
+        pointHitRadius: 0,
+        pointHitDetectionRadius: 0,
+        pointHoverRadius: 0,
+        data: getData(i),
+      });
+    }
+    return series;
+  })()
+  // {
+  //   label: 'Series ' + getOrder(),
+  //   xAxisID: 'xAxes-1',
+  //   type: 'scatter',
+  //   showLine: false,
+  //   pointRadius: 1,
+  //   data: getData(getOrder()),
+  // }
 };
 
 scatterChartData.datasets.forEach(function (dataset) {
@@ -561,6 +138,9 @@ var config = {
     tooltips: {
       enabled: false,
     },
+    legend: {
+      display: false,
+    },
     scales: {
       xAxes: [
         {
@@ -582,6 +162,9 @@ var config = {
             max: 50,
             maxRotation: 0,
             callback: function (value, index, values) {
+              if (index === 0 || index === 11) {
+                return '';
+              }
               return (Math.round(value * 10) / 10).toFixed(1);
             }
           },
@@ -647,7 +230,35 @@ var config = {
   }
 };
 
+var minXBeforePan = null;
+var range = tickMax - tickMin;
 window.onload = function () {
   var ctx = document.getElementById("canvas").getContext("2d");
   window.myScatter = new Chart(ctx, config);
+  var plotWidth = myScatter.chartArea.right - myScatter.chartArea.left;
+  var ratio = (tickMax - tickMin) / plotWidth;
+  var hammer = new Hammer(document.getElementById('canvas'));
+  hammer.on('pan', function (e) {
+    // var isFirst = e.isFirst;
+    var isFinal = e.isFinal;
+    if (!minXBeforePan) {
+      minXBeforePan = tickMin;
+    }
+    // console.log(minXBeforePan);
+    var newMin = minXBeforePan - e.deltaX * ratio;
+    var newMax = newMin + range;
+    if (isFinal) {
+      tickMin = newMin;
+      tickMax = newMax;
+      minXBeforePan = null;
+    }
+    myScatter.config.options.scales.xAxes[0].ticks.min = newMin;
+    myScatter.config.options.scales.xAxes[0].ticks.max = newMax;
+    myScatter.config.data.datasets.forEach(function (dataset, index) {
+      dataset.data = scatterChartData.datasets[index].data.filter(function (data) {
+        return (data.x >= newMin - 10 && data.x <= newMax + 10);
+      })
+    });
+    myScatter.update();
+  });
 };
