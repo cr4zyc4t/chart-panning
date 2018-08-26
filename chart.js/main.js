@@ -1,5 +1,5 @@
 const NUMBER_LINE = 40;
-const NUMBER_SAMPLE_DATA = 1000;
+const NUMBER_SAMPLE_DATA = 1200;
 var randomScalingFactor = function () {
   return Math.random() * 40.0;
 };
@@ -39,7 +39,6 @@ var scatterChartData = {
         label: 'Series ' + (i + 1),
         type: 'line',
         borderColor: randomColor(1),
-        borderWidth: 2,
         fill: false,
         xAxisID: 'xAxes-1',
         borderWidth: 1,
@@ -70,49 +69,6 @@ scatterChartData.datasets.forEach(function (dataset) {
   dataset.pointBorderWidth = 1;
 });
 
-function inOutQuad(n) {
-  console.log(n);
-  n *= 2;
-  if (n < 1) return 0.5 * n * n;
-  return - 0.5 * (--n * (n - 2) - 1);
-};
-
-function startAnimation(newMin) {
-  var stop = false;
-
-  // animating x (margin-left) from 20 to 300, for example
-  var duration = 1000;
-  var start = null;
-  var end = null;
-
-  function startAnim(timeStamp) {
-    start = timeStamp;
-    end = start + duration;
-    draw(timeStamp);
-  }
-
-  function draw(now) {
-    if (stop) return;
-    if (now - start >= duration) stop = true;
-    var p = (now - start) / duration;
-    val = p;
-    var x = tickMin + (newMin - tickMin) * val;
-
-    myScatter.config.options.scales.xAxes[0].ticks.min = x;
-    myScatter.config.options.scales.xAxes[0].ticks.max = x + tickMax - tickMin;
-    myScatter.config.data.datasets.forEach(function (dataset, index) {
-      dataset.data = scatterChartData.datasets[index].data.filter(function (data) {
-        return (data.x >= tickMin - 10 && data.x <= tickMax + 10);
-      })
-    });
-    myScatter.update();
-
-    requestAnimationFrame(draw);
-  }
-
-  requestAnimationFrame(startAnim);
-}
-
 var tickMin = 0;
 var tickMax = 50;
 
@@ -129,7 +85,7 @@ var config = {
   },
   options: {
     animation: {
-      duration: 50,
+      duration: 20,
     },
     title: {
       display: true,
@@ -145,7 +101,7 @@ var config = {
       xAxes: [
         {
           id: 'xAxes-1',
-          display: true,
+          display: false,
           type: 'linear',
           position: 'bottom',
           ticks: {
@@ -252,13 +208,51 @@ window.onload = function () {
       tickMax = newMax;
       minXBeforePan = null;
     }
-    myScatter.config.options.scales.xAxes[0].ticks.min = newMin;
-    myScatter.config.options.scales.xAxes[0].ticks.max = newMax;
-    myScatter.config.data.datasets.forEach(function (dataset, index) {
-      dataset.data = scatterChartData.datasets[index].data.filter(function (data) {
-        return (data.x >= newMin - 10 && data.x <= newMax + 10);
-      })
-    });
-    myScatter.update();
+    reDraw(newMin);
   });
 };
+
+function reDraw(newMin) {
+  const newMax = newMin + range;
+  myScatter.config.options.scales.xAxes[0].ticks.min = newMin;
+  myScatter.config.options.scales.xAxes[0].ticks.max = newMax;
+  myScatter.config.data.datasets.forEach(function (dataset, index) {
+    dataset.data = scatterChartData.datasets[index].data.filter(function (data) {
+      return (data.x >= newMin - 10 && data.x <= newMax + 10);
+    })
+  });
+  myScatter.update();
+}
+
+function easingLinear(passedTimeRatio) {
+  if (passedTimeRatio > 1) {
+    passedTimeRatio = 1;
+  }
+  return passedTimeRatio;
+}
+
+function easeOutQuart(passedTimeRatio) {
+  return 1 - (--passedTimeRatio) * Math.pow(passedTimeRatio, 3);
+}
+
+function moveTo(newMin) {
+  const startTime = performance.now();
+  const currentMin = myScatter.config.options.scales.xAxes[0].ticks.min;
+  const changed = newMin - currentMin;
+  if (changed === 0) {
+    return;
+  }
+  const duration = 500; //1s
+  function shortMove(now) {
+    const passedTime = now - startTime;
+    if (passedTime > duration) {
+      reDraw(newMin);
+      return;
+    }
+    // console.log(passedTime);
+    const tempMin = currentMin + changed * easeOutQuart(passedTime / duration);
+    reDraw(tempMin);
+    requestAnimationFrame(shortMove);
+  }
+  requestAnimationFrame(shortMove);
+}
