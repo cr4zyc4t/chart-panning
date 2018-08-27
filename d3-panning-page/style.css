@@ -1,0 +1,48 @@
+svg {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+}
+
+.fill {
+  fill: #F2F4F6;
+}
+
+.data-point {
+  fill: #9AD859;
+}
+
+.paging-button-fill {
+  fill: #989897;
+}
+
+.paging-button-text {
+  fill: #fff;
+  font-size: 14px;
+}
+
+.paging-button:hover {
+  cursor: pointer;
+}
+
+.paging-button:hover .paging-button-fill {
+  fill: #636363;
+}
+
+.paging-button-loading.paging-button:hover {
+  cursor: default;
+}
+
+.paging-button-loading .paging-button-fill,
+.paging-button-loading.paging-button:hover .paging-button-fill {
+  fill: #F2F4F6;
+}
+
+.paging-button-loading .paging-button-text {
+  fill: #000;
+}
